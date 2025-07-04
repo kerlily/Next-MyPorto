@@ -45,7 +45,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-primary transition-colors cursor-pointer duration-300">
+            <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-white hover:text-primary transition-colors cursor-pointer duration-300">
               {theme === "dark" ? (
                 <SunIcon className="w-6 h-6" />
               ) : (
