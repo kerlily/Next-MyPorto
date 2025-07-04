@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
-  const theme = "dark"; // This can be dynamic based on user preference
+  const {theme, toggleTheme} = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const toggleMobileMenu = () => {
@@ -45,7 +46,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-white hover:text-primary transition-colors cursor-pointer duration-300">
+            <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100  text-white hover:text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer duration-300">
               {theme === "dark" ? (
                 <SunIcon className="w-6 h-6" />
               ) : (
@@ -80,7 +81,7 @@ const Navbar = () => {
                     }
 
                     <div>
-                        <button className="flex items-center py-2 hover:text-primary transition-colors">
+                        <button onClick={toggleTheme} className="flex items-center py-2 hover:text-primary transition-colors">
                             {theme === "dark" ? (
                                 <><SunIcon className="w-6 h-6" /> Light Mode</>
                             ) : (
