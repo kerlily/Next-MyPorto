@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-dark/80 backdrop-blur-sm z-50">
+    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
       <div className="container max-w-7xl mx-auto px-4">
         {/* dekstop menu */}
         <div className="flex items-center justify-between h-16">
@@ -46,7 +46,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100  text-white hover:text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer duration-300">
+            <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100   hover:text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer duration-300 dark:text-white">
               {theme === "dark" ? (
                 <SunIcon className="w-6 h-6" />
               ) : (
