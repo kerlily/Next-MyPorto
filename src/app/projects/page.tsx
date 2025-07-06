@@ -3,22 +3,44 @@
 import { projects } from '@/contents/projects'
 import Image from 'next/image'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import {
+  fadeInDown,
+  fadeInUp,
+  staggerContainer,
+  cardHoverSmall
+} from '../utils/animations'
 
 export default function Projects() {
   return (
     <div className="container max-w-7xl mx-auto py-12">
-      <h1 className="text-4xl font-bold mb-4 text-center">
+      <motion.h1
+        className="text-4xl font-bold mb-4 text-center"
+        {...fadeInDown}
+      >
         My Projects
-      </h1>
-      <p className="text-lg text-secondary mb-24 text-center">
-        Here are some of my recent projects. Click on the links to view the code or live demo.
-      </p>
+      </motion.h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <motion.p
+        className="text-lg text-secondary mb-24 text-center"
+        {...fadeInDown}
+        transition={{ ...fadeInDown.transition, delay: 0.1 }}
+      >
+        Here are some of my recent projects. Click on the links to view the code or live demo.
+      </motion.p>
+
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+      >
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
+            variants={fadeInUp}
+            {...cardHoverSmall}
           >
             <div className="aspect-video bg-gray-200 dark:bg-gray-800">
               <Image
@@ -70,9 +92,9 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }

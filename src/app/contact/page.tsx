@@ -2,14 +2,22 @@
 
 import { useState } from 'react'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import {
+  fadeInDown,
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  scaleIn
+} from '../utils/animations'
 
 interface FormData {
-  name: string;
-  email: string;
-  message: string;
+  name: string
+  email: string
+  message: string
 }
 
-type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
@@ -17,33 +25,35 @@ export default function Contact() {
     email: '',
     message: ''
   })
+
   const [status, setStatus] = useState<FormStatus>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setStatus('loading');
+    e.preventDefault()
+    setStatus('loading')
 
-  try {
-    const response = await fetch('https://formspree.io/f/xblyepda', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/xblyepda', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
 
-    if (!response.ok) throw new Error('Gagal mengirim pesan');
+      if (!response.ok) throw new Error('Gagal mengirim pesan')
 
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
-  } catch (error) {
-    setStatus('error') ;
-    console.error('Error sending message:', error);
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      setStatus('error')
+      console.error('Error sending message:', error)
+    }
   }
-};
 
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -52,13 +62,17 @@ export default function Contact() {
 
   return (
     <div className="container max-w-7xl mx-auto py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">
+      <motion.h1
+        className="text-4xl font-bold mb-8 text-center"
+        {...fadeInDown}
+        transition={{ ...fadeInDown.transition, delay: 0.2 }}
+      >
         Contact Me
-      </h1>
-      
+      </motion.h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information */}
-        <div className="space-y-8">
+        <motion.div className="space-y-8" {...fadeInLeft}>
           <div>
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <p className="text-secondary">
@@ -66,72 +80,82 @@ export default function Contact() {
               opportunities to be part of your visions.
             </p>
           </div>
-          
+
           <div className="space-y-4">
-            <div className="flex items-center gap-4 hover:translate-x-2 transition-transform">
-              <FaEnvelope className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <a href="mailto:farhan15062004@gmail.com" className="text-secondary hover:text-primary">
-                  your.email@example.com
-                </a>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4 hover:translate-x-2 transition-transform">
-              <FaPhone className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <a href="tel:+1234567890" className="text-secondary hover:text-primary">
-                  +1 (234) 567-890
-                </a>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4 hover:translate-x-2 transition-transform">
-              <FaMapMarkerAlt className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Location</h3>
-                <p className="text-secondary">San Francisco, CA</p>
-              </div>
-            </div>
+            {[
+              {
+                icon: <FaEnvelope className="h-6 w-6 text-primary" />,
+                title: 'Email',
+                value: (
+                  <a
+                    href="mailto:farhan15062004@gmail.com"
+                    className="text-secondary hover:text-primary"
+                  >
+                    your.email@example.com
+                  </a>
+                )
+              },
+              {
+                icon: <FaPhone className="h-6 w-6 text-primary" />,
+                title: 'Phone',
+                value: (
+                  <a
+                    href="tel:+1234567890"
+                    className="text-secondary hover:text-primary"
+                  >
+                    +1 (234) 567-890
+                  </a>
+                )
+              },
+              {
+                icon: <FaMapMarkerAlt className="h-6 w-6 text-primary" />,
+                title: 'Location',
+                value: <p className="text-secondary">San Francisco, CA</p>
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="flex items-center gap-4 hover:translate-x-2 transition-transform"
+                {...fadeInUp}
+                transition={{ delay: 0.2 + i * 0.1 }}
+              >
+                {item.icon}
+                <div>
+                  <h3 className="font-semibold">{item.title}</h3>
+                  {item.value}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-        
+        </motion.div>
+
         {/* Contact Form */}
-        <div className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md">
+        <motion.div
+          className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+          {...fadeInRight}
+        >
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            
-            <div>
+            {[
+              { label: 'Name', type: 'text', id: 'name', value: formData.name },
+              { label: 'Email', type: 'email', id: 'email', value: formData.email }
+            ].map((field, i) => (
+              <motion.div key={i} {...fadeInUp} transition={{ delay: 0.2 + i * 0.1 }}>
+                <label htmlFor={field.id} className="block text-sm font-medium mb-2">
+                  {field.label}
+                </label>
+                <input
+                  type={field.type}
+                  id={field.id}
+                  name={field.id}
+                  value={field.value}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </motion.div>
+            ))}
+
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
               <label htmlFor="message" className="block text-sm font-medium mb-2">
                 Message
               </label>
@@ -144,29 +168,31 @@ export default function Contact() {
                 rows={4}
                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
               />
-            </div>
-            
-            <button
+            </motion.div>
+
+            <motion.button
               type="submit"
               disabled={status === 'loading'}
               className="w-full btn btn-primary hover:scale-[1.02] active:scale-95 transition-transform"
+              {...scaleIn}
+              transition={{ delay: 0.5 }}
             >
               {status === 'loading' ? 'Sending...' : 'Send Message'}
-            </button>
-            
+            </motion.button>
+
             {status === 'success' && (
               <p className="text-green-500 text-center mt-2">
                 Message sent successfully!
               </p>
             )}
-            
+
             {status === 'error' && (
               <p className="text-red-500 text-center mt-2">
                 Failed to send message. Please try again.
               </p>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
