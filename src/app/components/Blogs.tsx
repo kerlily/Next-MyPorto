@@ -3,7 +3,6 @@
 import { blogs } from '@/contents/blogs'
 import React from 'react'
 import Link from 'next/link'
-import { FaCalendar, FaClock } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import {
   fadeInDown,
@@ -11,6 +10,8 @@ import {
   staggerContainer,
   cardHoverSmall
 } from '../utils/animations'
+import Image from 'next/image'
+
 
 const Blogs = () => {
   return (
@@ -35,22 +36,23 @@ const Blogs = () => {
             variants={fadeInUp}
             {...cardHoverSmall}
           >
-            <Link href={`/blogs/${blog.slug}`}>
-              <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors duration-300">
-                {blog.title}
-              </h3>
-            </Link>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{blog.excerpt}</p>
-            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4">
-              <span className="flex items-center">
-                <FaCalendar className="mr-2" />
-                {new Date(blog.date).toLocaleDateString()}
-              </span>
-              <span className="flex items-center">
-                <FaClock className="mr-2" />
-                {blog.readTime}
-              </span>
-            </div>
+            
+           {blog.image && (
+                          <div className="mb-4 w-full h-40 relative">
+                            <Image
+                              src={blog.image}
+                              alt={blog.title}
+                              fill
+                              className="object-cover rounded-md"
+                              sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                          </div>
+                        )}
+                        <Link href={`/blogs/${blog.slug}`}>
+                            <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors duration-300">{blog.title}</h3>
+                        </Link>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4">{blog.excerpt}</p>
+                       
           </motion.article>
         ))}
       </motion.div>

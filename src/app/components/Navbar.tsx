@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Blogs", href: "/blogs" },
+    { name: "Certification", href: "/blogs" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -27,7 +27,7 @@ const Navbar = () => {
         {/* dekstop menu */}
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-primary">
-            Portofolio&trade;
+            Portofolio Farhan
           </Link>
 
           {/* desktop menu */}

@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className='text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8'
         >
-          Full Stack Web Developer | 2D Animator
+          Junior Web Developer
         </motion.p>
 
         {/* Social Icons */}
@@ -46,13 +46,13 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className='flex justify-center space-x-4 mb-8'
         >
-          <Link href="https://github.com/farhanporto" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+          <Link href="https://github.com/kerlily" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
             <FaGithub />
           </Link>
-          <Link href="https://linkedin.com" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+          <Link href="https://www.linkedin.com/in/muhammad-farhan-1b2659310/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
             <FaLinkedinIn />
           </Link>
-          <Link href="https://instagram.com" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+          <Link href="https://www.instagram.com/pahhun_/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
             <FaInstagram />
           </Link>
         </motion.div>
