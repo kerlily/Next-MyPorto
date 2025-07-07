@@ -41,6 +41,31 @@ export const projects: Projects[] = [
         demoLink: '',
         image: '/projects/booksales.png',
       },
+      {
+        title: 'AR Spaceship',
+        description: 'An AR Spaceship built with Unity and NianticLightsip for androidfeaturing 3d spaceship that can spawn based on gps location.',
+        technologies: ['Unity', 'Niantic Lightship'],
+        githubLink: '',
+        demoLink: '',
+        image: '/projects/ARunity.jpg',
+      },
+      {
+        title: 'Pomodoro timer',
+        description: 'A dual-mode Pomodoro timer crafted with JavaScript, HTML, and tailwind. Whether you are working in the terminal with Node.js or prefer a visual timer on the web, this tool helps you manage your focus sessions with ease',
+        technologies: ['JavaScript', 'HTML', 'Tailwind CSS'],
+        githubLink: 'https://github.com/kerlily/NPM-PomdoroTimer',
+        demoLink: '',
+        image: '/projects/pomodoro.png',
+      },
+      {
+        title: 'Web Portofolio',
+        description: 'A personal portfolio website showcasing my projects and skills, built with Next.js and Tailwind CSS. animated with framer-motion.',
+        technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+        githubLink: 'https://github.com/kerlily/NPM-PomdoroTimer',
+        demoLink: '',
+        image: '/projects/porto.png',
+      },
+
 
       
   ];  

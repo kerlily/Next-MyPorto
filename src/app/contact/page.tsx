@@ -91,7 +91,7 @@ export default function Contact() {
                     href="mailto:farhan15062004@gmail.com"
                     className="text-secondary hover:text-primary"
                   >
-                    your.email@example.com
+                    farhan15062004@gmail.com
                   </a>
                 )
               },
@@ -100,17 +100,17 @@ export default function Contact() {
                 title: 'Phone',
                 value: (
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+62895343109709"
                     className="text-secondary hover:text-primary"
                   >
-                    +1 (234) 567-890
+                    +62 895-3431-09709
                   </a>
                 )
               },
               {
                 icon: <FaMapMarkerAlt className="h-6 w-6 text-primary" />,
                 title: 'Location',
-                value: <p className="text-secondary">San Francisco, CA</p>
+                value: <p className="text-secondary">Batang, Jawa Tengah</p>
               }
             ].map((item, i) => (
               <motion.div
