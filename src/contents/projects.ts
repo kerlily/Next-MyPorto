@@ -6,7 +6,7 @@ export const projects: Projects[] = [
         description: 'A full-stack wen application for mental health support, featuring AI-driven chatbots and user management.',
         technologies: ['React', 'Laravel', 'MysQL', 'Tailwind CSS'],
         githubLink: 'https://github.com/kerlily/Project-Akhir',
-        demoLink: '',
+        demoLink: 'https://metality-ai.vercel.app/',
         image: '/projects/metality.png',
       },
       {
