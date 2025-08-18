@@ -1,4 +1,4 @@
-import { Projects } from "@/types";
+    import { Projects } from "@/types";
 
 export const projects: Projects[] = [
     {
@@ -6,7 +6,7 @@ export const projects: Projects[] = [
         description: 'A full-stack wen application for mental health support, featuring AI-driven chatbots and user management.',
         technologies: ['React', 'Laravel', 'MysQL', 'Tailwind CSS'],
         githubLink: 'https://github.com/kerlily/Project-Akhir',
-        demoLink: '',
+        demoLink: 'https://metality-ai.vercel.app/',
         image: '/projects/metality.png',
       },
       {
@@ -38,7 +38,7 @@ export const projects: Projects[] = [
         description: 'A full-stack book sales management system built with Laravel and React, featuring user authentication and product management.',
         technologies: ['Laravel', 'React', 'MySQL', 'Tailwind CSS'],
         githubLink: 'https://github.com/kerlily/SIB-TASKS',
-        demoLink: '',
+        demoLink: 'https://sib-booksales-farhan.vercel.app/',
         image: '/projects/booksales.png',
       },
       {
