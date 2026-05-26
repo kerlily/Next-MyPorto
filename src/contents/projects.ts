@@ -1,9 +1,25 @@
     import { Projects } from "@/types";
 
 export const projects: Projects[] = [
-    {
+     {
+        title: 'SIA SDN Proyonanggan 9 Batang',
+        description: 'A school information system for SDN Proyonanggan 9 Batang, built with React and Laravel API. It features student management, attendance tracking, and academic performance monitoring.',
+        technologies: ['React', 'Laravel API', 'MysQL'],
+        githubLink: 'https://github.com/kerlily/LMS_Proyonanggan9-FE',
+        demoLink: 'https://lms.sdnproyonanggan9.my.id/',
+        image: '/projects/SIA.png',
+     },
+     {
+        title: 'Company Profile SDN Proyonanggan 9 Batang',
+        description: 'Developed a company profile website for SDN Proyonanggan 9 Batang to provide up-to-date information about the school, including announcements, latest news, and student admissions (PMB).',
+        technologies: ['Next.js', 'Laravel API', 'MysQL'],
+        githubLink: 'https://github.com/kerlily/Proyonanggan9-FE',
+        demoLink: 'https://sdnproyonanggan9.my.id/',
+        image: '/projects/comprom.png',
+     },
+     {
         title: 'Metality AI',
-        description: 'A full-stack wen application for mental health support, featuring AI-driven chatbots and user management.',
+        description: 'A full-stack web application for mental health support, featuring AI-driven chatbots and user management.',
         technologies: ['React', 'Laravel', 'MysQL', 'Tailwind CSS'],
         githubLink: 'https://github.com/kerlily/Project-Akhir',
         demoLink: 'https://metality-ai.vercel.app/',

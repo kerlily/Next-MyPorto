@@ -8,7 +8,7 @@ import {
   scaleIn,
   cardHoverSmall,
 } from "../utils/animations";
-import { FaCode, FaLaptopCode, FaCogs } from "react-icons/fa";
+import {  FaLaptopCode, FaCogs } from "react-icons/fa";
 import { FaCodeMerge, FaToolbox } from "react-icons/fa6";
 
 export default function About() {
@@ -44,36 +44,26 @@ export default function About() {
           animate="animate"
         >
           {[
-            {
-              icon: <FaCode className="h-8 w-8 text-primary mb-4" />,
-              title: "Frontend",
-              items: [
-                "React.js",
-                "Next.js",
-                "Tailwind CSS",
-                "Bootstrap",
-                "HTML5 / CSS3",
-              ],
-            },
-            {
-              icon: <FaLaptopCode className="h-8 w-8 text-primary mb-4" />,
-              title: "Backend",
-              items: ["Node.js", "Express", "MongoDB", "MySQL"],
-            },
+            
             {
               icon: <FaCodeMerge className="h-8 w-8 text-primary mb-4" />,
               title: "Programming Languages",
-              items: ["JavaScript", "PHP", "Python", "Java"],
+              items: ["JavaScript", "PHP", "Python"],
             },
             {
               icon: <FaCogs className="h-8 w-8 text-primary mb-4" />,
               title: "Frameworks",
-              items: ["Laravel", "CodeIgniter"],
+              items: ["Laravel", "React.js", "Next.js"],
+            },
+            {
+              icon: <FaLaptopCode className="h-8 w-8 text-primary mb-4" />,
+              title: "Database",
+              items: [ "MongoDB", "MySQL"],
             },
             {
               icon: <FaToolbox className="h-8 w-8 text-primary mb-4" />,
               title: "Tools & Others",
-              items: ["Git / GitHub", "Postman", "Construct 3 & 2", 'Unity'],
+              items: ["Git / GitHub", "Postman", "Construct 3 & 2"],
             },
           ].map((skill, i) => (
             <motion.div
@@ -151,12 +141,12 @@ export default function About() {
             variants={fadeInUp}
           >
             <h3 className="text-xl font-semibold mb-2">
-              Bachelor’s Degree in Informatics Engineering (Ongoing)
+              Bachelor’s Degree in Informatics Engineering
 
             </h3>
-            <p className="text-primary mb-2">Institute Widya Pratama • 2022 - present</p>
+            <p className="text-primary mb-2">Institute Widya Pratama • 2022 - 2026</p>
             <p className="text-secondary">
-              Currently pursuing a Bachelor`s degree in Informatics Engineering at Institute Widya Pratama, with a focus on software engineering and web development.
+              Bachelor`s degree in Informatics Engineering at Institute Widya Pratama, with a focus on software engineering and web development.
 
             </p>
           </motion.div>

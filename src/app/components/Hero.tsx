@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className='flex flex-col items-center mb-4'
         >
-           <Image src="/profile.avif" alt="profile" width={100} height={100} className='rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary'/>
+           <Image src="/pp.jpeg" alt="profile" width={100} height={100} className='rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary'/>
         </motion.div>
 
         {/* Heading */}
@@ -28,7 +28,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className='text-4xl md:text-6xl font-bold mb-6'
         >
-          Hello, I&apos;m <span className='text-primary'>Muhammad Farhan</span>
+          Hello, I&apos;m <span className='text-primary'>Farhan</span>
         </motion.h1>
 
         {/* Bio */}

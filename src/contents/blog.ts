@@ -16,7 +16,7 @@ export const blogs = [
     title: "Sertifikat BNSP Junior Web Developer",
     excerpt: "BNSP (Badan Nasional Sertifikasi Profesi)",
     slug: "",
-    image: "/certificates/bnsp.jpg",
+    image: "/certificates/image.png",
   },
   {
     title: "Alibaba Cloud Certified Developers 1",
